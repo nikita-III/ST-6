@@ -1,6 +1,8 @@
 // Реализация игры "Крестики-нолики" (3x3)
 // Минимаксный алгоритм
 
+package com.mycompany.app;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -30,7 +32,7 @@ class Game {
     public int q;
     public char[] board;
 
-
+    // test 1
     public Game() {
       player1=new Player();
       player2=new Player();
@@ -47,6 +49,7 @@ class Game {
     {
       //char symbol=game.symbol;//cplayer.symbol;
       State state=State.PLAYING;
+      // test 8 * 2 + 1
       if ((board[0] == symbol && board[1] == symbol && board[2] == symbol) ||
           (board[3] == symbol && board[4] == symbol && board[5] == symbol) ||
           (board[6] == symbol && board[7] == symbol && board[8] == symbol) ||
@@ -75,12 +78,14 @@ class Game {
   }
      // сгенерировать возможные ходы
    void generateMoves(char[] board, ArrayList<Integer> move_list) {
+    // test 1 to 9
     for (int i = 0; i < 9; i++) 
         if (board[i] == ' ') 
             move_list.add(i);
    }
 
    // оценка позиции
+   // test 1 to 8 * 2 + 1
    int evaluatePosition(char[] board, Player player)  
    {
     State state=checkState(board);
